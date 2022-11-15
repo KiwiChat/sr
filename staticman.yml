@@ -42,6 +42,7 @@ comments:
   # Otherwise, entries will be published to the main branch automatically.
   moderation: false
 
+  allowedOrigins: ["localhost", "test.kiwichat.ml"]
   # Name of the site. Used in notification emails.
   name: "staticman-recaptcha"
 
