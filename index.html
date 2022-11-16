@@ -9,6 +9,7 @@ title: {{ site.name }}
       <th>Developer's name</th>
       <th>Programming language</th>
       <th>Comment</th>
+      <th>Rating</th>
     </thead>
     <tbody>
       {% assign entries = site.data.entries | sort %}
@@ -17,6 +18,7 @@ title: {{ site.name }}
           <td>{{ entry[1].name }}</td>
           <td>{{ entry[1].language }}</td>
           <td>{{ entry[1].message }}</td>
+          <td>{{ entry[1].star }}<i class="material-icons rating-star">star</i></td>
         </tr>
       {% endfor %}  
     </tbody>
@@ -41,6 +43,17 @@ title: {{ site.name }}
     
     <label for="message">Comment</label>
     <textarea id="message" name="fields[message]" placeholder="Here's the thing..."></textarea>
+
+            <span class="star-cb-group">
+              <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
+              <input type="radio" id="rating-4" name="rating" value="4" checked="checked" /><label for="rating-4">4</label>
+              <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
+              <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
+              <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
+              <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+            </span>
+        
+      <br>
 
     <input type="hidden" name="options[redirect]" value="https://test.kiwichat.ml/thankyou">
     <input type="hidden" name="options[redirectError]" value="https://test.kiwichat.ml/error">
